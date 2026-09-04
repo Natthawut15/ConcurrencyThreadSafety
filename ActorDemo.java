@@ -36,10 +36,10 @@ public class ActorDemo {
      * balance เป็น field ธรรมดา ไม่ final ไม่ volatile ไม่ synchronized
      * ปลอดภัยได้เพราะมีเธรดเดียวเท่านั้นที่แตะมัน
      */
-    private static class AccountActor implements Runnable {
+    private static class AccountActor implements Runnable { //Runable = มีงานในตัวเอง
 
         private int balance = 0;
-
+        /** มี blox ไว้เก็บ Queue */
         private final BlockingQueue<Msg> inbox = new LinkedBlockingQueue<Msg>();
 
         /** คนอื่นทำได้แค่นี้ — ฝากข้อความไว้ แล้วจากไป */
